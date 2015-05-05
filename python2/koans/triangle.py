@@ -19,7 +19,11 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    num = len(sorted(set([a,  b, c])))
+    x = [a,  b, c]
+    x.sort()
+    if x[0] <=0 or x[0] + x[1] <= x[2]:
+        raise TriangleError
+    num = len(sorted(set(x)))
     if num == 1:
         return "equilateral"
     elif num == 2:
